@@ -1,0 +1,21 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: server-registry
+  security:
+    user:
+      name: 'algaeshop'
+      password: '123'
+      roles: 'ADMIN'
+    ignored: /actuator/**
+
+eureka:
+  client:
+    fetchRegistry: false
+    registerWithEureka: false
+
+logging:
+  level:
+    com.netflix.eureka: DEBUG
+    com.netflix.discovery: DEBUG

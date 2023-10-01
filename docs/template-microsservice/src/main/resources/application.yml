@@ -1,0 +1,49 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+
+spring:
+  application:
+    name: algaeshop-template
+  jpa:
+    hibernate:
+      ddl-auto: update #none if flyway
+    show-sql: false
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost:3307}/algaeshop_database?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:algaeshop}
+  rabbitmq:
+    host: ${RABBITMQ_HOST:rabbitmq}
+    port: ${RABBITMQ_PORT:5673}
+    username: ${RABBITMQ_USERNAME:algaeshop}
+    password: ${RABBITMQ_PASSWORD:algaeshop}
+  flyway:
+    locations: classpath:db/migration
+  jackson:
+    deserialization:
+      fail-on-ignored-properties: 'true'
+      fail-on-unknown-properties: 'true'
+  security:
+    user:
+      name: 'algaeshop'
+      password: '123'
+      roles: 'ADMIN'
+    ignored: /actuator/**
+eureka:
+  client:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'health,info,prometheus'
+        exclude: threaddump
+  endpoint:
+    health:
+      enabled: true
+      show-details: always

@@ -1,0 +1,53 @@
+services:
+  redis:
+    image: redis:7
+    command: redis-server
+    ports:
+      - "6380:6379"
+    restart:
+      unless-stopped
+  mysql-8:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: algaeshop
+      MYSQL_DATABASE: algadeshop_database
+    ports:
+      - "3307:3306"
+    restart:
+      unless-stopped
+  postgres-12:
+    image: postgres:12
+    environment:
+      POSTGRES_PASSWORD: algaeshop
+      POSTGRES_DB: algaeshop
+      POSTGRES_USER: algaeshop
+      PGPORT: 5432
+    ports:
+      - "5433:5432"
+    restart:
+      unless-stopped
+  mongodb:
+    image: mongo:6
+    ports:
+      - 27018:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: algaeshop
+      MONGO_INITDB_ROOT_PASSWORD: algaeshop
+    restart:
+      unless-stopped
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 5673:5672
+      - 15673:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: algaeshop
+      RABBITMQ_DEFAULT_PASS: algaeshop
+    healthcheck:
+      test: [ "CMD", "rabbitmqctl", "status" ]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+    restart:
+      unless-stopped

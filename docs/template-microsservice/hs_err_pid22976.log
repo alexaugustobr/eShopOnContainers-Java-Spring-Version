@@ -1,0 +1,216 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 536870912 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3541), pid=22976, tid=22884
+#
+# JRE version:  (17.0.5+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0.5+9-LTS-191, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=windows-1252 -Duser.country=BR -Duser.language=pt -Duser.variant org.springframework.boot.SpringApplicationAotProcessor com.algaworks.example.algaeshop.template.TemplateApplication C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\generated\aotSources C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\generated\aotResources C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\generated\aotClasses com.algaworks.example.eshopconatiners template
+
+Host: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz, 8 cores, 31G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+Time: Tue Aug 15 18:14:49 2023 Hora oficial do Brasil elapsed time: 0.010957 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002a65bb64950):  JavaThread "Unknown thread" [_thread_in_vm, id=22884, stack(0x000000fb5fc00000,0x000000fb5fd00000)]
+
+Stack: [0x000000fb5fc00000,0x000000fb5fd00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x672eea]
+V  [jvm.dll+0x7d2a04]
+V  [jvm.dll+0x7d41ae]
+V  [jvm.dll+0x7d4813]
+V  [jvm.dll+0x242c15]
+V  [jvm.dll+0x66fe09]
+V  [jvm.dll+0x664682]
+V  [jvm.dll+0x300e8b]
+V  [jvm.dll+0x308426]
+V  [jvm.dll+0x357ffe]
+V  [jvm.dll+0x35822f]
+V  [jvm.dll+0x2d80a8]
+V  [jvm.dll+0x2d9014]
+V  [jvm.dll+0x7a44e1]
+V  [jvm.dll+0x365df1]
+V  [jvm.dll+0x7838fc]
+V  [jvm.dll+0x3e873f]
+V  [jvm.dll+0x3ea1e1]
+C  [jli.dll+0x527b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17614]
+C  [ntdll.dll+0x526f1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffdd293a8d8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002a65bc10d70 GCTaskThread "GC Thread#0" [stack: 0x000000fb5fd00000,0x000000fb5fe00000] [id=23768]
+  0x000002a67d5d4010 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000fb5fe00000,0x000000fb5ff00000] [id=12104]
+  0x000002a65bc1eb40 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000fb5ff00000,0x000000fb60000000] [id=9440]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdd2188a97]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002a65bb60d20] Heap_lock - owner thread: 0x000002a65bb64950
+
+Heap address: 0x0000000603c00000, size: 8132 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000603c00000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdd256c399]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.006 Loaded shared library C:\Program Files\Java\jdk-17.0.5\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff633940000 - 0x00007ff633950000 	C:\Program Files\Java\jdk-17.0.5\bin\java.exe
+0x00007ffe61790000 - 0x00007ffe61988000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffe61690000 - 0x00007ffe6174f000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffe5f450000 - 0x00007ffe5f746000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffe5f0a0000 - 0x00007ffe5f1a0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe45340000 - 0x00007ffe4535a000 	C:\Program Files\Java\jdk-17.0.5\bin\VCRUNTIME140.dll
+0x00007ffe50500000 - 0x00007ffe50518000 	C:\Program Files\Java\jdk-17.0.5\bin\jli.dll
+0x00007ffe5f7f0000 - 0x00007ffe5f89f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffe60090000 - 0x00007ffe6012e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffe5f8b0000 - 0x00007ffe5f94c000 	C:\Windows\System32\sechost.dll
+0x00007ffe5fa60000 - 0x00007ffe5fb86000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffe614f0000 - 0x00007ffe6168d000 	C:\Windows\System32\USER32.dll
+0x00007ffe42ce0000 - 0x00007ffe42f7a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffe5f420000 - 0x00007ffe5f442000 	C:\Windows\System32\win32u.dll
+0x00007ffe60a30000 - 0x00007ffe60a5c000 	C:\Windows\System32\GDI32.dll
+0x00007ffe5f300000 - 0x00007ffe5f415000 	C:\Windows\System32\gdi32full.dll
+0x00007ffe5f750000 - 0x00007ffe5f7ed000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffe55a90000 - 0x00007ffe55a9a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffe614c0000 - 0x00007ffe614f0000 	C:\Windows\System32\IMM32.DLL
+0x00007ffe45310000 - 0x00007ffe4531c000 	C:\Program Files\Java\jdk-17.0.5\bin\vcruntime140_1.dll
+0x00007ffe33f90000 - 0x00007ffe3401d000 	C:\Program Files\Java\jdk-17.0.5\bin\msvcp140.dll
+0x00007ffdd1ea0000 - 0x00007ffdd2a62000 	C:\Program Files\Java\jdk-17.0.5\bin\server\jvm.dll
+0x00007ffe5fbf0000 - 0x00007ffe5fbf8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffe43010000 - 0x00007ffe43019000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffe4da80000 - 0x00007ffe4daa7000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffe60270000 - 0x00007ffe602db000 	C:\Windows\System32\WS2_32.dll
+0x00007ffe5d6c0000 - 0x00007ffe5d6d2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffe3c5b0000 - 0x00007ffe3c5ba000 	C:\Program Files\Java\jdk-17.0.5\bin\jimage.dll
+0x00007ffe5d300000 - 0x00007ffe5d4e4000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffe37630000 - 0x00007ffe37664000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffe5ee70000 - 0x00007ffe5eef2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffe36ee0000 - 0x00007ffe36f05000 	C:\Program Files\Java\jdk-17.0.5\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-17.0.5\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-17.0.5\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=windows-1252 -Duser.country=BR -Duser.language=pt -Duser.variant 
+java_command: org.springframework.boot.SpringApplicationAotProcessor com.algaworks.example.algaeshop.template.TemplateApplication C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\generated\aotSources C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\generated\aotResources C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\generated\aotClasses com.algaworks.example.eshopconatiners template
+java_class_path (initial): C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\classes\java\main;C:\git\private\eShopOnContainers-Java-Spring-Version\docs\template-microsservice\build\resources\main;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-data-jpa\3.1.2\a37d54373b11d2de70dfb8bcd6612dc63787f4a8\spring-boot-starter-data-jpa-3.1.2.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.hibernate.orm\hibernate-core\6.2.6.Final\9c4586a4a2dc721439ee454d5c858c1235b6ecba\hibernate-core-6.2.6.Final.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-amqp\3.1.2\8e507d584e24915e80ed11ad0aa4184040d32286\spring-boot-starter-amqp-3.1.2.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-oauth2-resource-server\3.1.2\f6000ef67fb4f54578e7e8b8aaa723d1dbb9b347\spring-boot-starter-oauth2-resource-server-3.1.2.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-security\3.1.2\f51204b86f626c2a7f0d41f88e8e3bd86091dd1d\spring-boot-starter-security-3.1.2.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\3.1.2\30b824817e764a5a5a1e9fb46e7ace40bcfa3185\spring-boot-starter-web-3.1.2.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-actuator\3.1.2\3ccf6b4e95aeb399ce852a811de6ce8fbd52ea0c\spring-boot-starter-actuator-3.1.2.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-starter-netflix-eureka-client\4.0.3\1fec6bc9b32b31ab319402173fc67d4bda30adc1\spring-cloud-starter-netflix-eureka-client-4.0.3.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.mysql\mysql-connector-j\8.0.33\9e64d997873abc4318620264703d3fdb6b02dd5a\mysql-connector-j-8.0.33.jar;C:\Users\Admin\.gradle\caches\modules-2\files-2.1\jakarta.persistence\jak
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 536870912                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8527020032                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 8527020032                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17.0.5
+PATH=C:\Program Files\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.19.7-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Admin\AppData\Roaming\nvm;C:\Users\Admin\AppData\Roaming\nodejs;C:\Program Files\Go\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\dotnet\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Git\cmd;C:\Program Files\Memurai\;C:\Users\Admin\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Admin\AppData\Local\Programs\Python\Python311\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.1\bin;;C:\Users\Admin\AppData\Roaming\nvm;C:\Users\Admin\AppData\Roaming\nodejs;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Admin\AppData\Roaming\nvm;C:\Users\Admin\go\bin;C:\Users\Admin\AppData\Roaming\hugo;C:\Users\Admin\AppData\Local\Programs\Python\Python310;C:\apps\sonar-scanner-4.7.0.2747-windows\bin;C:\Program Files\apache-maven-3.8.6\bin;C:\apps\ngrok;
+USERNAME=Admin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+OS uptime: 1 days 5:42 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12 microcode 0xf0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, hv
+
+Memory: 4k page, system-wide physical 32523M (3270M free)
+TotalPageFile size 32523M (AvailPageFile size 442M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 572M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (17.0.5+9-LTS-191) for windows-amd64 JRE (17.0.5+9-LTS-191), built on Sep 13 2022 17:31:43 by "mach5one" with MS VC++ 16.8 / 16.9 (VS2019)
+
+END.

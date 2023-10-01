@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}
+      metrics.path: /actuator/prometheus
+      health.path: /actuator/health
+      management.context-path: /actuator
+  client:
+    enabled: false
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://algaeshop:123@discovery:8761}/eureka/
+    registerWithEureka: false
+    fetchRegistry: false
